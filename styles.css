@@ -1,0 +1,240 @@
+:root{
+    --blanco: #ffffff;
+    --negro: #000000;
+
+    --azul: #4f8bda;
+    --azul-oscuro: #090e57f3;
+    --verde: #2ecc71;
+    --rojo: #e74c3c;
+    --amarillo: #f1c40f;
+    --gris-claro: #ecf0f1;
+    --gris-oscuro: #2c3e50;
+}
+
+html{
+    font-size: 62.5%;   
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, rgb(238, 225, 225) 0% var(--blanco) 100%);
+    color: var(--negro);
+}
+
+.titulo{
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--azul-oscuro);
+}
+
+.span{
+    font-size: 2rem;
+    color: var(--azul-oscuro);
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav{
+    padding: 1rem;
+    background-color: var(--azul);
+}
+
+.nav a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+.hero{
+    position: relative;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5)
+}
+
+.hero-contenido{
+    position: absolute;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.hero-contenido button{
+    padding: 1rem 2rem;
+    background-color: var(--azul);
+    color: var(--blanco);
+    border: none;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+.ubicacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; 
+}
+
+.sombra{
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    margin: 2rem;
+}
+
+.servicios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--azul);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-shrink: 0;
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario{
+    background-color:var(--gris-claro);
+    width: min(60rem,100%) ;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius:1rem ;
+ } 
+.formulario fieldset{ 
+    border:none; 
+}    
+
+.formulario legend {
+    text-align:center;
+    font-size:1.8rem;
+    text-transform:uppercase; 
+    font-weight:700; 
+    margin-bottom:2rem; 
+    color: var(--gris-claro); 
+}
+
+.formulario label{
+    display: block;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    font-size: 1.6rem;
+}
+
+.formulario input,
+.formulario textarea{
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid var(--gris-oscuro);
+    font-size: 1.6rem;
+    font-family: inherit;
+}
+
+.formulario textarea{
+    height: 12rem;
+    resize: none;
+}
+
+.formulario input:focus,
+.formulario textarea:focus{
+    outline: none;
+    border: 2px solid var(--azul);
+}
+
+.formulario button{
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--azul);
+    color: var(--blanco);
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.formulario button:hover{
+    background-color: var(--azul-oscuro);
+}
+
+@media (max-width: 480px){
+    .servicios{
+        grid-template-columns: 1fr;
+    }
+
+    .sombra{
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .formulario{
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .servicios{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .formulario{
+        width: 90%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1280px){
+    .servicios{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .formulario{
+        width: 70%;
+    }
+}
+
+@media (min-width: 1281px){
+    .servicios{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .formulario{
+        width: 60rem;
+    }
+}
